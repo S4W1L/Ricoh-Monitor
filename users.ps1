@@ -6,12 +6,12 @@
 
 # SMTP Configuration (kept in script)
 $EmailConfig = @{
-    SmtpServer  = "smtp.gmail.com"
-    SmtpPort    = 587
-    Username    = "hpz.scans@gmail.com"
-    Password    = "wjwdgiwdjfwyhffb"  
-    FromAddress = "hpz.scans@gmail.com"
-    ToAddress   = "samuel.jesus@hpz.pt", "pedro.nascimento@hpz.pt"
+    SmtpServer  = "YOUR SMTP"
+    SmtpPort    = 587 # PORT
+    Username    = "EMAIL"
+    Password    = "PASSWORD"  
+    FromAddress = "EMAIL FROM"
+    ToAddress   = "RECIVER", "RECIVER2"
 }
 
 # OIDs
