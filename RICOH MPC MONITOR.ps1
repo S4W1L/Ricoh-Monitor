@@ -1,17 +1,17 @@
 <#
 .NOTES
-    Version: 1.2
+    Version: 1.5
     Author: Samuel Jesus
 #>
 
 # SMTP Configuration (kept in script)
 $EmailConfig = @{
-    SmtpServer  = "YOUR SMTP"
-    SmtpPort    = 587 # PORT
+    SmtpServer  = "SMTP Settings"
+    SmtpPort    = PORT
     Username    = "EMAIL"
-    Password    = "PASSWORD"  
-    FromAddress = "EMAIL FROM"
-    ToAddress   = "RECIVER", "RECIVER2"
+    Password    = "PASSWORD" # App Password  
+    FromAddress = "ADDRESS FROM"
+    ToAddress   = "DESTINATION", "DESTINATION2"
 }
 
 # OIDs
@@ -20,19 +20,18 @@ $OIDs = @{
     "Serial Number"       = ".1.3.6.1.4.1.367.3.2.1.2.1.4.0"
     "Firmware"            = ".1.3.6.1.4.1.367.3.2.1.1.1.2.0"
     "Contador"            = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.1"
-    "Total Impressoes"    = ".1.3.6.1.4.1.367.3.2.1.2.19.2.0"
-    "Total Impressao Cores"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66" # ok
-    "Total Impressao Preto"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67" # ok
-    "Total Copias"        = ".1.3.6.1.4.1.367.3.2.1.2.19.4.0"
-    "Total Copia Cores"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.62" # ok
-    "Total Copia Preto"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.63" #ok
-    "Total Cores"         = "1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.60" # precisa de soma
-    "Total Preto Branco"  = "1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.61" # precisa de soma
+    "Total Impressoes"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8"                  #OLD:1.3.6.1.4.1.367.3.2.1.2.19.2.0                NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8
+    "Total Impressao Cores mau"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66"        #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66           NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.25
+    "Total Impressao Preto"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67"            #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67           NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26
+    "Total Copias"        = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2"                  #OLD:1.3.6.1.4.1.367.3.2.1.2.19.4.0                NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2
+    "Total Copia Cores"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17"                 #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.62           NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17
+    "Total Copia Preto"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18"                 #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.63           NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18
     "Black Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.1"
     "Cyan Toner Level %"  = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.2"
     "Magenta Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.3"
     "Yellow Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.4"
     "Error Status"        = ".1.3.6.1.4.1.367.3.2.1.2.2.13.0"
+    "Total Impressoes preto mau" = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26"
     
 }
 
@@ -102,7 +101,16 @@ function Get-SnmpData {
             Start-Sleep -Seconds 2
         }
     }
+
+
+
+    $result['Total Impressao Cores'] = $result['Total Impressao Cores mau'] + ($result['Total Impressoes preto mau'] - $result['Total Impressao Preto'])
+    $result['Total Cores']        = $result['Total Impressao Cores'] + $result['Total Copia Cores']
+    $result['Total Preto Branco'] = $result['Total Impressao Preto'] + $result['Total Copia Preto']
     
+
+
+
     $printerName = if ($result["Model Name"] -and $result["Model Name"] -ne "Unavailable") { 
         $result["Model Name"] 
     } else { 
