@@ -20,18 +20,22 @@ $OIDs = @{
     "Serial Number"       = ".1.3.6.1.4.1.367.3.2.1.2.1.4.0"
     "Firmware"            = ".1.3.6.1.4.1.367.3.2.1.1.1.2.0"
     "Contador"            = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.1"
-    "Total Impressoes"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8"                  #OLD:1.3.6.1.4.1.367.3.2.1.2.19.2.0                (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8
-    "Total Impressao Cores mau"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66"        #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66           (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.25
-    "Total Impressao Preto"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67"            #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67           (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26
-    "Total Copias"        = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2"                  #OLD:1.3.6.1.4.1.367.3.2.1.2.19.4.0                (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2
-    "Total Copia Cores"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17"                 #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.62           (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17
-    "Total Copia Preto"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18"                 #OLD:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.63           (RICOH IMC)-NEW:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18
+    "Total Impressoes"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8" # ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.2.0                       NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.8
+    "Total Impressao Cores mau"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.25" #  ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.66       NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.25    MPC300:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.60
+    "Total Impressao Preto mau"    = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26" #  ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.67           NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26
+    "Total Copias"        = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2" # ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.4.0                       NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.2
+    "Total Copia Cores"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17" #  ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.62                NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.17
+    "Total Copia Preto"   = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18" #  ANTIGO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.63                NOVO:1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.18
     "Black Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.1"
     "Cyan Toner Level %"  = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.2"
     "Magenta Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.3"
     "Yellow Toner Level %" = ".1.3.6.1.4.1.367.3.2.1.2.24.1.1.5.4"
     "Error Status"        = ".1.3.6.1.4.1.367.3.2.1.2.2.13.0"
     "Total Impressoes preto mau" = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26"
+    #"DEBUG" = ".1.3.6.1.4.1.367.3.2.1.1.1.1.0"
+    #"DEBUG IMPRESSAO CORES3" = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.25" Total impressão cores a precisar de soma de 2cores para todos os modelos 
+    #"DEBUG IMPRESSAO PRETO2" = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.26"  A funcionar em todos os modelos com soma de 2CORES (tem que se subtrair)
+    "DEBUG 2CORES" = ".1.3.6.1.4.1.367.3.2.1.2.19.5.1.9.10"  #2CORES tem que somar a impressão a cores e subtrair no impressão preto
     
 }
 
@@ -103,9 +107,9 @@ function Get-SnmpData {
     }
 
 
-
-    $result['Total Impressao Cores'] = $result['Total Impressao Cores mau'] + ($result['Total Impressoes preto mau'] - $result['Total Impressao Preto'])
+    $result['Total Impressao Cores'] = $result['Total Impressao Cores mau'] + $result['DEBUG 2CORES']
     $result['Total Cores']        = $result['Total Impressao Cores'] + $result['Total Copia Cores']
+    $result['Total Impressao Preto'] = $result['Total Impressao Preto mau'] - $result['DEBUG 2CORES']
     $result['Total Preto Branco'] = $result['Total Impressao Preto'] + $result['Total Copia Preto']
     
 
@@ -134,12 +138,12 @@ function Send-EmailReport {
         'Serial Number',
         'Firmware',
         'Contador',
-        'Total Impressoes',
-        'Total Impressao Cores',
-        'Total Impressao Preto',
-        'Total Copias',
-        'Total Copia Cores',
-        'Total Copia Preto',
+        #'Total Impressoes',
+        #'Total Impressao Cores',
+        #'Total Impressao Preto',
+        #'Total Copias',
+        #'Total Copia Cores',
+        #'Total Copia Preto',
         'Total Cores',
         'Total Preto Branco',
         'Black Toner Level %',
@@ -147,6 +151,10 @@ function Send-EmailReport {
         'Magenta Toner Level %',
         'Yellow Toner Level %',
         'Error Status'
+        #'DEBUG',
+        #'DEBUG IMPRESSAO CORES3',
+        #'DEBUG IMPRESSAO PRETO2',
+        #'DEBUG 2CORES'
     )
     
     $html = @"
