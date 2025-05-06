@@ -40,6 +40,7 @@ Place these files in the folder:
 Configuration:
 Edit C:\Printer Monitor\printers_config.json:
 
+```
 json
 [
     {
