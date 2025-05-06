@@ -52,6 +52,7 @@ json
         "Community": "private"
     }
 ]
+```
 
 SMTP Setup (Edit EXE with PowerShell if needed):
 
