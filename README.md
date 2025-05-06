@@ -1,8 +1,12 @@
 # Ricoh Printer SNMP Monitoring Tool
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-v5.1+-blue.svg)  
-![Deployment](https://img.shields.io/badge/Schedule-Monthly%201st-brightgreen)
-![](https://img.shields.io/badge/Self_Made-Windows-blue)
+![Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue.svg)   
+![Deployment](https://img.shields.io/badge/Schedule-Monthly%201st-brightgreen)   
+![Device](https://img.shields.io/badge/Device-Ricoh%20Printer-red.svg)   
+![Protocol](https://img.shields.io/badge/Protocol-SNMP-blue.svg)   
+
+
 
 A compiled PowerShell executable that monitors Ricoh MPC printers via SNMP and sends scheduled email reports with toner levels and page counts.
 
@@ -114,7 +118,7 @@ Check community strings match
 
 Test connectivity (Test-NetConnection <IP> -Port 161)
 
-##### Email failures:
+#### Email failures:
 
 Verify SMTP credentials
 
@@ -127,5 +131,22 @@ Review Windows Event Logs for errors
 Run EXE manually to generate config file
 
 Ensure folder has write permissions
+
+
+### ✅ Supported Models
+
+- Ricoh MP C300   
+- Ricoh MP C3504   
+- Ricoh MP C301
+
+#### Have you tested this tool with other Ricoh models?
+#### Let me know in the comments which models work (or don't work) for you – your feedback helps improve compatibility for everyone!
+
+
+### 🚧 Work in Progress
+- Ricoh IM C series support (Not currently functional)
+
+
+
 
 
