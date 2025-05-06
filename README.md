@@ -1,7 +1,8 @@
 # Ricoh Printer SNMP Monitoring Tool
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-v5.1+-blue.svg)  
-![Deployment](https://img.shields.io/badge/Schedule-Monthly%201st-brightgreen)  
+![Deployment](https://img.shields.io/badge/Schedule-Monthly%201st-brightgreen)
+!(https://img.shields.io/badge/Self_Made-Windows-blue)
 
 A compiled PowerShell executable that monitors Ricoh MPC printers via SNMP and sends scheduled email reports with toner levels and page counts.
 
