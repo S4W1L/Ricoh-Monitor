@@ -1,12 +1,29 @@
-# Ricoh-Monitor
-Ricoh monitoring counters and more, with OIDs
+# Ricoh Printer SNMP Monitoring Tool
 
-After running the script it creates a printers_config.json. By default it has 2 IP's but you can change and put what ever, even add more. 
-I compiled to do a .exe
-Invoke-PS2EXE -InputFile "script_name.ps1" -OutputFile "name.exe" -IconFile "icon_example.ico" -Title "title of software" -Company "Company" -Product "Software name" -Description "Software Description"
+![PowerShell](https://img.shields.io/badge/PowerShell-v5.1+-blue.svg)
 
-After compiling and everything working:
-  Put in Task Schedule every first day of the month
-  Keeping it in C:/ with printers_config.json in the same folder, so if something breaks, you could troubleshoot
+A PowerShell script that monitors Ricoh printers via SNMP and sends email reports with toner levels, page counts, and status information.
 
-I made this .exe because it has smtp settings, in .exe its encripted.
+## Features
+
+- Collects printer metrics via SNMP (v2c)
+- Tracks toner levels (CMYK)
+- Monitors page counts (color, black & white, copies)
+- Detects printer errors
+- Generates HTML email reports
+- Supports multiple printers via JSON configuration
+- Automatic retry mechanism for unreliable connections
+
+## Prerequisites
+
+- PowerShell 5.1 or later
+- SNMP access to printers (community string)
+- SMTP server credentials for email notifications
+- Windows system with SNMP COM object available (`OlePrn.OleSNMP`)
+
+## Installation
+
+1. Clone or download the script to your preferred location
+2. Ensure PowerShell execution is allowed:
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
